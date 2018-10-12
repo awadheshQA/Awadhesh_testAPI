@@ -1,0 +1,126 @@
+   QA_test
+       bin --> All scripts are under bin directory
+
+         --> In this directory i ahve created all Test scripts which will test all API functionalities from https://openweathermap.org/current page
+		 --> This directory contains many scripts each script can run individually
+		 --> All scripts is having steps how to execute on the top of script also i have mentioned below all execution steps along Script name.
+         --> You might need to install 'jq' for print json details in some script i ahve used so it needed to be pre-installed 		 
+
+		Sanity_test_Unit_C.sh
+
+			# This script will cover to check Sanity level of testing for all functionalities of openweathermap current weather API in unit C
+			# This is for test/Verify the openweathermap API
+			# Please add your city name which you want to test in citi_name variable list
+			# To Run this test You have to come on directory where this script resides and execute as './Sanity_test_Unit_C.sh
+			# Test result for current weather report for openweathermap you can see on terminal itself and also it stor in log file as well which you can find on ../logs/
+			# On new run existing log will deleted and new log will be created also  in ../logs/ you can see city wise log as well and master also
+			# Enable below if you are extracting entire directory to your home directory then  do pwd and set that path to QA_HOME
+
+		Sanity_test_Unit_F.sh
+
+			# This script will cover to check Sanity level of testing for all functionalities of openweathermap current weather API in unit F
+			# This is written to test/Verify the openweathermap API
+			# Please add your city name which you want to test in citi_name variable list
+			# To Run this test You have to come on directory where this script reside and execute as './Sanity_test_Unit_F.sh
+			# Test result for current weather report for openweathermap you can see on terminal itself and also it stor in log file as well which you can find on ../logs/
+			# On new run existing log will deleted and new log will be created also  in ../logs/ you can see city wise log as well and master also
+			# Enable below if you are extracting entire directory to your home directory then  do pwd and set that path to QA_HOME
+
+
+		Test_weather_parameter.sh
+			# This test is for to test city along country name, you have to pass city name with option along country name below is the exaample of run
+			# Please run indivisualy this scripts as './Test_weather_parameter.sh'
+			# If are interested to run with argument passing along base script the run as ' bash ../../bash-weather-test/bash-weather.sh -t London -c UK
+			# In this script i have hardcode  city name and country names for testing purpose
+			# If want to pass any city and country name which is not hdded as variable then
+			# Go to test directory where 'bash-weather.sh' available then you have to run only ./bash-weather.sh along options (exmple: ./bash-weather.sh -t London -c UK )
+			# Please increase sleep time value if api is responding in a minutes or more based on that you change then you will get data
+			#If it write empty output fropm API then increase sleep time valeue after script executed
+
+
+		Sanity_test_Unit_C.sh
+
+			# This is written by Awadhesh Jha to test/Verify the openweathermap API
+			# Please add your city name which you want to test in citi_name variable list
+			# To Run this test You have to come on directory where this script reside and execute as './Sanity_test_Unit_C.sh
+			# Test result for current weather report for openweathermap you can see on terminal itself and also it stor in log file as well which you can find on ../logs/
+			# On new run existing log will deleted and new log will be created also  in ../logs/ you can see city wise log as well and master also
+			# Enable below if you are extracting entire directory to your home directory then  do pwd and set that path to QA_HOME
+
+
+		Sanity_test_Unit_F.sh
+
+			# Please add your city name which you want to test in citi_name variable list
+			# To Run this test You have to come on directory where this script reside and execute as './Sanity_test_Unit_C.sh
+			# Test result for current weather report for openweathermap you can see on terminal itself and also it stor in log file as well which you can find on ../logs/
+			# On new run existing log will deleted and new log will be created also  in ../logs/ you can see city wise log as well and master also
+			# Enable below if you are extracting entire directory to your home directory then  do pwd and set that path to QA_HOME
+
+		Test_api_with_city_name.sh
+
+			# This script run for openweathermap current API and get the output to the report show
+			# To execute this script please run as './Test_api_with_city_name.sh Sydney' where Sydney is the city argument need to pass along script
+			#Author: Awadhesh Jha
+			#All API have taken from openweathermap.org and verified
+			#This script fatchs all details about city name openweathermap current weather API result
+			#Result will be displayed on terminal during oron completion of execution script run and also display status about weather condition
+			# Result you can see as City Name, Sun-Rise and Sun-Set and Temperature Max,Min
+
+		Test_api_with_city_id.sh
+
+			# This script run for openweathermap current API and get the output to the report show
+			# To execute this script please run as './Test_api_with_city_id.sh 2172797' where 2172797 is the city id argument need to pass along script
+			#Author: Awadhesh Jha
+			#All API have taken from openweathermap.org and verified
+			#This script fatchs all details about city name openweathermap current weather API result
+			#Result will be displayed on terminal during oron completion of execution script run and also display status about weather condition
+			# Result you can see as City Name, Sun-Rise and Sun-Set and Temperature Max,Min
+
+
+		Test_api_with_geographic.sh
+			# This script run for openweathermap current API and get the output to the report show
+			# To execute this script please run as './Test_api_with_geographic.sh 35 139' where lat=35&lon=139 are the arguments need to pass along script
+			#All API have taken from openweathermap.org and verified
+			#This script fatchs all details about city name openweathermap current weather API result
+			#Result will be displayed on terminal during oron completion of execution script run and also display status about weather condition
+			# Result you can see as City Name, Sun-Rise and Sun-Set and Temperature Max,Min
+
+		Test_api_with_zipcode.sh
+
+			# This script run for openweathermap current API and get the output to the report show
+			# To execute this script please run as './Test_api_with_zipcode.sh 94040 us' where zip=94040 and country code is US are the arguments need to pass along script
+			#All API have taken from openweathermap.org and verified
+			#This script fatchs all details about city name openweathermap current weather API result
+			#Result will be displayed on terminal during oron completion of execution script run and also display status about weather condition
+			# Result you can see as City Name, Sun-Rise and Sun-Set and Temperature Max,Min
+
+
+		Test_api_with_several_city_ids.sh
+
+			#Run this script as ./Test_api_with_several_city_ids.sh
+			# In This script i have hard coded multiple city id's parameter, so no need to pass just run script
+			# If You wish to pass bbox values as arguments you need to defined arguments passing variable
+			# This script result you of parameters as id=524901,703448,2643743[d1,id2,id3,.....]
+			# Passing value along script are  which is hard coded
+
+
+		Test_api_with_bbox.sh
+
+			#Run this script as ./Test_api_with_bbox.sh
+
+			# In This script i have hard coded some known bbox parameter, so no need to pass just run script
+			# If You wish to pass bbox values as arguments you need to defined arguments passing variable
+			# This script result you of parameters as bbox bounding box [lon-left,lat-bottom,lon-right,lat-top,zoom]
+			# Passing value along script are  which is hard coded
+			
+			
+	Logs --> All script execution script will store under logs directory for being huge logs i am keeping removing if you wish to store 
+	         please comment the remove command in scripts.
+			 
+	config --> I have created config directory as a part of test framwork to configure any files or any environment details can be set it here
+	
+	Lib --> All required libraries can be placed here like any package it required like Json tool,Java, or any library which required.
+	
+	
+Thanks for reading i hope you enjoyed my automation framework --- Awadhesh Jha.
+DAte: 12-oct-2018
